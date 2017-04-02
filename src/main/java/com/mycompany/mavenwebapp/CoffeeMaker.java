@@ -33,7 +33,7 @@ public class CoffeeMaker {
         this.on = on;
         this.pressed = 0;
         
-        System.out.println("SysOut: CoffeeMaker ready");
+        System.out.println("SysOut: CoffeeMaker initialised");
         Logger.trace("Logger: CoffeeMaker initialised");
         Logger.debug("Logger: CoffeeMaker initialised");
         Logger.info("Logger: CoffeeMaker initialised");
