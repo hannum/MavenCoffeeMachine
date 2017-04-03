@@ -145,14 +145,14 @@
                             </artifactItems>
                         </configuration>
                     </execution>
-                    <execution>
+<!--                    <execution>
                         <id>copy-dependencies-for-Heroku</id>
                         <phase>package</phase>
                         <goals>
                             <goal>copy-dependencies</goal>
                         </goals>
-                    </execution>
-                    <execution>
+                    </execution>-->
+<!--                    <execution>
                         <id>copy-war-to-local-tomcat-webapp</id>
                         <phase>install</phase>
                         <goals>
@@ -170,7 +170,7 @@
                             </artifactItems>
                             <outputDirectory>${tomcatHome}\webapps</outputDirectory>
                         </configuration>
-                    </execution>
+                    </execution>-->
                 </executions>
             </plugin>
             <plugin>
