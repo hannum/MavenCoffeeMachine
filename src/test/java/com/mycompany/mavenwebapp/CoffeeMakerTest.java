@@ -37,6 +37,19 @@ public class CoffeeMakerTest {
         CoffeeMaker result = CoffeeMaker.getInstance();
         assertEquals(expResult, result);
     }
+    
+    /**
+     * Test of pressOnOff method, of class CoffeeMaker.
+     */
+    @Test
+    public void testPressOnOff() {
+        System.out.println("pressOnOff");
+        CoffeeMaker cm = CoffeeMaker.getInstance();
+        cm.pressOnOff();
+        assertTrue(cm.isOn());
+        cm.pressOnOff();
+        assertFalse(cm.isOn());
+    }
   
 //    /**
 //     * Test of getWater method, of class CoffeeMaker.
@@ -92,18 +105,6 @@ public class CoffeeMakerTest {
 //        fail("The test case is a prototype.");
 //    }
 //
-    /**
-     * Test of pressOnOff method, of class CoffeeMaker.
-     */
-    @Test
-    public void testPressOnOff() {
-        System.out.println("pressOnOff");
-        CoffeeMaker cm = CoffeeMaker.getInstance();
-        cm.pressOnOff();
-        assertTrue(cm.isOn());
-        cm.pressOnOff();
-        assertFalse(cm.isOn());
-    }
 //
 //      /**
 //     * Test of fillWater method, of class CoffeeMaker.
