@@ -12,7 +12,7 @@
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <skipTests>true</skipTests>
+        <noTests>true</noTests>
         <tomcatHome>C:\Program Files - Own installs\Apache Software Foundation\apache-tomcat-8.5.12</tomcatHome>
     </properties>
     
@@ -81,18 +81,6 @@
                     </plugin>
                 </plugins>
             </build>
-        </profile>
-        <profile>
-            <id>UnitTests</id>
-            <properties>
-                <testcase.groups>com.example.UnitTests</testcase.groups>        
-            </properties>
-        </profile>
-        <profile>
-            <id>IntegrationTests</id>
-            <properties>
-                <testcase.groups>com.example.IntegrationTests</testcase.groups>
-            </properties>
         </profile>
         <profile>
             <!-- Profile to deploy on Heroku test server -->
@@ -172,6 +160,25 @@
                             </artifactItems>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>copy-war-to-local-tomcat-webapp</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>${project.artifactId}</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>${project.packaging}</type>
+                                    <destFileName>${project.artifactId}.war</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                            <outputDirectory>${tomcatHome}\webapps</outputDirectory>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
@@ -179,16 +186,8 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19.1</version>
                 <configuration>
-                    <skipTests>${skipTests}</skipTests>
-                    <groups>${testcase.groups}</groups>
+                    <skipTests>${noTests}</skipTests>
                 </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.apache.maven.surefire</groupId>
-                        <artifactId>surefire-junit47</artifactId>
-                        <version>2.19.1</version>
-                    </dependency>
-                </dependencies>
             </plugin>
             <plugin>
                 <!-- Default Heroku deployment configuration -->
