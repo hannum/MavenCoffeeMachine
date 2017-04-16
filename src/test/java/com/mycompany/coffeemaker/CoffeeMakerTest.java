@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.mavenwebapp;
+package com.mycompany.coffeemaker;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;

@@ -1,4 +1,4 @@
-package com.mycompany.mavenwebapp;
+package com.mycompany.coffeemaker;
 
 import org.pmw.tinylog.Logger;
 
