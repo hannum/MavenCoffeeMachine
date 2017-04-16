@@ -145,6 +145,5 @@ public class CoffeeMakerTest {
         cm.pressOnOff();
         cm.brew();
         cm.fillBeans();
-
     }
 }
