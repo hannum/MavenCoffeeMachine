@@ -9,6 +9,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.experimental.categories.Category;
 
 /**
  *
@@ -30,6 +31,7 @@ public class CoffeeMakerTest {
     /**
      * Test of getInstance method, of class CoffeeMaker.
      */
+    @Category(UnitTests.class)
     @Test
     public void testGetInstance() {
         System.out.println("CoffeeMakerTest: getInstance");
@@ -41,6 +43,7 @@ public class CoffeeMakerTest {
     /**
      * Test of pressOnOff method, of class CoffeeMaker.
      */
+    @Category(IntegrationTests.class)
     @Test
     public void testPressOnOff() {
         System.out.println("pressOnOff");
@@ -121,6 +124,7 @@ public class CoffeeMakerTest {
     /**
      * Test of brew method, of class CoffeeMaker.
      */
+    @Category(IntegrationTests.class)
     @Test
     public void testBrew() {
         System.out.println("brew");
@@ -138,6 +142,7 @@ public class CoffeeMakerTest {
     /**
      * Test of fillBeans method, of class CoffeeMaker.
      */
+    @Category(IntegrationTests.class)
     @Test
     public void testFillBeans() {
         System.out.println("CoffeeMakerTest: fillBeans");
