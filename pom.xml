@@ -79,15 +79,15 @@
             </build>
         </profile>
         <profile>
-            <id>UnitTests</id>
+            <id>unitTests</id>
             <properties>
-                <testcase.groups>com.mycompany.coffeemaker.UnitTests</testcase.groups>        
+                <test.categories>com.mycompany.coffeemaker.UnitTests</test.categories>        
             </properties>
         </profile>
         <profile>
-            <id>IntegrationTests</id>
+            <id>integrationTests</id>
             <properties>
-                <testcase.groups>com.mycompany.coffeemaker.IntegrationTests</testcase.groups>
+                <test.categories>com.mycompany.coffeemaker.IntegrationTests</test.categories>
             </properties>
         </profile>
     </profiles>
@@ -165,15 +165,8 @@
                 <version>2.19.1</version>
                 <configuration>
                     <skipTests>${skipTests}</skipTests>
-                    <groups>${testcase.groups}</groups>
+                    <groups>${test.categories}</groups>
                 </configuration>
-                <!--                <dependencies>
-                    <dependency>
-                        <groupId>org.apache.maven.surefire</groupId>
-                        <artifactId>surefire-junit47</artifactId>
-                        <version>2.19.1</version>
-                    </dependency>
-                </dependencies>-->
             </plugin>
         </plugins>
     </build>
